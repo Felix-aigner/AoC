@@ -2,12 +2,12 @@ package days
 
 import java.io.File
 
-interface day_three {
+interface day3 {
     fun partOne(): Int
     fun partTwo(): Int
 }
 
-class day_threeImpl : day_three {
+class day3Impl : day3 {
 
 
     override fun partOne(): Int {

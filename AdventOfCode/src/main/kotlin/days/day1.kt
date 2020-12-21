@@ -2,12 +2,12 @@ package days
 
 import java.io.File
 
-interface day_one {
+interface day1 {
     fun partOne(): Int
     fun partTwo(): Int
 }
 
-class day_oneImpl : day_one{
+class day1Impl : day1 {
 
     private val input = mutableListOf<Int>()
 

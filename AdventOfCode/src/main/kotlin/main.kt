@@ -1,12 +1,14 @@
-import days.day_threeImpl
+import days.day4Impl
 
 fun main(args: Array<String>) {
-    // print(day_oneImpl().partOne())
-    // print(day_oneImpl().partTwo())
+//    print(day1Impl().partOne())
+//    print(day1Impl().partTwo())
+//
+//    print(day2Impl().partOne())
+//    print(day2Impl().partTwo())
+//
+//    print(day3Impl().partOne())
+//    print(day3Impl().partTwo())
 
-    // print(day_twoImpl().partOne())
-    // print(day_twoImpl().partTwo())
-
-    // print(day_threeImpl().partOne())
-    print(day_threeImpl().partTwo())
+    print(day4Impl().partOne())
 }
