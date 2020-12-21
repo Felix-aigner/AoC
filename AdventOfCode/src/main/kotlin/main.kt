@@ -1,7 +1,12 @@
-fun main(args: Array<String>) {
-    // print(day_oneImpl().dayOne())
-    // print(day_oneImpl().dayOne_partTwo())
+import days.day_threeImpl
 
-    // print(day_twoImpl().dayTwo())
-    // print(day_twoImpl().dayTwo_partTwo())
+fun main(args: Array<String>) {
+    // print(day_oneImpl().partOne())
+    // print(day_oneImpl().partTwo())
+
+    // print(day_twoImpl().partOne())
+    // print(day_twoImpl().partTwo())
+
+    // print(day_threeImpl().partOne())
+    print(day_threeImpl().partTwo())
 }

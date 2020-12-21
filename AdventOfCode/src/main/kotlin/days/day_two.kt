@@ -3,8 +3,8 @@ package days
 import java.io.File
 
 interface day_two {
-    fun dayTwo(): Int
-    fun dayTwo_partTwo(): Int
+    fun partOne(): Int
+    fun partTwo(): Int
 }
 
 
@@ -12,7 +12,7 @@ class day_twoImpl : day_two {
 
     private val input = mutableListOf<String>()
 
-    override fun dayTwo(): Int {
+    override fun partOne(): Int {
         var validPasswords: Int = 0
         File("input_daytwo").forEachLine { input.add(it) }
         input.forEach { line ->
@@ -31,7 +31,7 @@ class day_twoImpl : day_two {
         return validPasswords
     }
 
-    override fun dayTwo_partTwo(): Int {
+    override fun partTwo(): Int {
         var validPasswords: Int = 0
         File("input_daytwo").forEachLine { input.add(it) }
         input.forEach { line ->
