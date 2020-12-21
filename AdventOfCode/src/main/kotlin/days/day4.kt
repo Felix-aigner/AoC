@@ -9,12 +9,13 @@ interface day4 {
 }
 
 class day4Impl : day4 {
+
+    val passworts: List<String> = File("day4").bufferedReader().use { it.readText() }.split("\n\n")
+
     override fun partOne(): Int {
         var validPassports = 0
-        val input = File("day4").bufferedReader().use { it.readText() }
-        val passworts: List<String> = input.split("\n\n")
         passworts.forEach {
-            if (ValidPassport(it.replace("\n", " ")))
+            if (ValidPassport(it))
                 validPassports++
         }
         return validPassports
@@ -28,7 +29,7 @@ class day4Impl : day4 {
     }
 
     override fun partTwo(): Int {
-        TODO("Not yet implemented")
+        return 0;
     }
 
 }

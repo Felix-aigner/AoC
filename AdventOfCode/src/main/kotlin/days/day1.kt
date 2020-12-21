@@ -12,7 +12,7 @@ class day1Impl : day1 {
     private val input = mutableListOf<Int>()
 
     override fun partOne(): Int {
-        File("input").forEachLine { input.add(it.toInt()) }
+        File("day1").forEachLine { input.add(it.toInt()) }
         for (i in 1..input.count()) {
             for (k in i..input.count()) {
                 val sum = input[i - 1] + input[k - 1]
@@ -24,7 +24,7 @@ class day1Impl : day1 {
     }
 
     override fun partTwo(): Int {
-        File("input").forEachLine { input.add(it.toInt()) }
+        File("day1").forEachLine { input.add(it.toInt()) }
         for (i in 1..input.count()) {
             for (k in i..input.count()) {
                 for (p in k..input.count()) {

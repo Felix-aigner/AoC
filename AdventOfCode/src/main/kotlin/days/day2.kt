@@ -14,7 +14,7 @@ class day2Impl : day2 {
 
     override fun partOne(): Int {
         var validPasswords: Int = 0
-        File("input_daytwo").forEachLine { input.add(it) }
+        File("day2").forEachLine { input.add(it) }
         input.forEach { line ->
             val splitLine = line.split(" ")
             val lowerlim = splitLine[0].split("-")[0].toInt()
@@ -33,7 +33,7 @@ class day2Impl : day2 {
 
     override fun partTwo(): Int {
         var validPasswords: Int = 0
-        File("input_daytwo").forEachLine { input.add(it) }
+        File("day2").forEachLine { input.add(it) }
         input.forEach { line ->
             val splitLine = line.split(" ")
             val lowerPos = splitLine[0].split("-")[0].toInt()
