@@ -25,4 +25,9 @@ fun main(args: Array<String>) {
     println(day5Impl().partOne())
     print("Day 5, Part 2: ")
     println(day5Impl().partTwo())
+
+    print("Day 6, Part 1: ")
+    println(day6Impl().partOne())
+    print("Day 6, Part 2: ")
+    println(day6Impl().partTwo())
 }
