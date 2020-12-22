@@ -31,25 +31,40 @@ class day7Impl : day7 {
     }
 
     override fun partTwo(): Int {
-        return includedBags("shiny gold")
+        val bags = getBags()
+        return count(bags["shiny gold"]) - 1
     }
 
-    private fun includedBags(search: String): Int {
-        var sum = 1
-        input.dropLast(1).forEach {
-            val container = it.split(" ")[0] + " " + it.split(" ")[1]
-            val inside = it.split(" ").drop(2).joinToString(" ").replace("bags contain ", "")
-            if (container == search) {
-                if (!inside.contains("no other bags")) {
-                    inside.split(", ").forEach {
-                        val bag = it.toCharArray().drop(2).joinToString("").replace(" bag", "").replace(" bags", "")
-                            .dropLast(1)
-                        val times = it.toCharArray()[0].toString().toInt()
-                        sum += times * includedBags(bag)
-                    }
-                }
+    private fun count(bag: Bag?): Int = bag?.let { 1 + bag.contains.map { it.value * count(it.key) }.sum() } ?: 0
+
+    private fun getBags(): MutableMap<String, Bag> {
+        val bags = mutableMapOf<String, Bag>()
+        File("day7").readLines().forEach {
+            val (parent, children) = it.split(" bags contain ")
+            bags.getOrPut(parent) { Bag(parent) }.apply {
+                contains.putAll(
+                    children.split(" bags, ", " bag, ").map {
+                        it.replace(" bags.", "")
+                            .replace(" bag.", "")
+                            .replace("no other", "")
+                    }.filter(CharSequence::isNotEmpty)
+                        .associate {
+                            val (count, color) = Regex("""(\d) (.*)""").find(it)!!.destructured
+
+                            val contained = bags.getOrPut(color) { Bag(color) }
+                            contained.parents.add(this)
+
+                            Pair(contained, count.toInt())
+                        }
+                )
             }
         }
-        return sum
+        return bags
+    }
+
+    data class Bag(val color: String) {
+        val contains = mutableMapOf<Bag, Int>()
+        val parents = mutableListOf<Bag>()
     }
 }
+
