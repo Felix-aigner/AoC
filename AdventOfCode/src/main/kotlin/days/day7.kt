@@ -31,6 +31,25 @@ class day7Impl : day7 {
     }
 
     override fun partTwo(): Int {
-        TODO("Not yet implemented")
+        return includedBags("shiny gold")
+    }
+
+    private fun includedBags(search: String): Int {
+        var sum = 1
+        input.dropLast(1).forEach {
+            val container = it.split(" ")[0] + " " + it.split(" ")[1]
+            val inside = it.split(" ").drop(2).joinToString(" ").replace("bags contain ", "")
+            if (container == search) {
+                if (!inside.contains("no other bags")) {
+                    inside.split(", ").forEach {
+                        val bag = it.toCharArray().drop(2).joinToString("").replace(" bag", "").replace(" bags", "")
+                            .dropLast(1)
+                        val times = it.toCharArray()[0].toString().toInt()
+                        sum += times * includedBags(bag)
+                    }
+                }
+            }
+        }
+        return sum
     }
 }

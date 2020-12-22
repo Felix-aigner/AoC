@@ -33,6 +33,6 @@ fun main(args: Array<String>) {
 
     print("Day 7, Part 1: ")
     println(day7Impl().partOne())
-//    print("Day 7, Part 2: ")
-//    println(day7Impl().partTwo())
+    print("Day 7, Part 2: ")
+    println(day7Impl().partTwo())
 }
