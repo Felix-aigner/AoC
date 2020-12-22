@@ -1,7 +1,4 @@
-import days.day1Impl
-import days.day2Impl
-import days.day3Impl
-import days.day4Impl
+import days.*
 
 fun main(args: Array<String>) {
     print("Day 1, Part 1: ")
@@ -23,4 +20,9 @@ fun main(args: Array<String>) {
     println(day4Impl().partOne())
     print("Day 4, Part 2: ")
     println(day4Impl().partTwo())
+
+    print("Day 5, Part 1: ")
+    println(day5Impl().partOne())
+//    print("Day 5, Part 2: ")
+//    println(day5Impl().partTwo())
 }
